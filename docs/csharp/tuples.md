@@ -1,5 +1,5 @@
 ---
-title: Tuples | C# Guide
+title: Tuples | Microsoft Docs
 description: Learn about unnamed and named tuple types in C#
 keywords: .NET, .NET Core, C#
 author:  BillWagner

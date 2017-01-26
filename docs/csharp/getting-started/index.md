@@ -1,5 +1,5 @@
 ---
-title: Getting Started | C# Guide
+title: Getting Started | Microsoft Docs
 description: Getting Started with C#
 keywords: C#, Getting Started, Acquisition, Install
 author: rpetrusha

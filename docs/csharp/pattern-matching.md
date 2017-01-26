@@ -1,5 +1,5 @@
 ---
-title: Pattern Matching | C# Guide
+title: Pattern Matching | Microsoft Docs
 description: Learn about pattern matching expressions in C#
 keywords: .NET, .NET Core, C#
 ms.date: 10/04/2016

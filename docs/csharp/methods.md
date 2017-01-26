@@ -1,5 +1,5 @@
 ---
-title: Methods | C# Guide
+title: Methods | Microsoft Docs
 description: Overview of methods, method parameters, and method return values
 keywords: .NET, .NET Core, C#
 author: rpetrusha

@@ -1,5 +1,5 @@
 ---
-title: Classes | C# Guide
+title: Classes | Microsoft Docs
 description: Learn about the class types and how you create them
 keywords: .NET, .NET Core, C#
 author:  stevehoag

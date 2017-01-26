@@ -1,5 +1,5 @@
 ---
-title: Interfaces | C# Guide
+title: Interfaces | Microsoft Docs
 description: Learn about creating and using interfaces in C#
 keywords: .NET, .NET Core, C#
 ms.date: 12/01/2016

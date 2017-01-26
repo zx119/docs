@@ -1,5 +1,5 @@
 ---
-title: Namespaces and Assemblies | C# Guide
+title: Namespaces and Assemblies | Microsoft Docs
 description: Namespaces and Assemblies are the fundamental organizing features for C#
 keywords: .NET, .NET Core, C#
 ms.date: 12/01/2016
