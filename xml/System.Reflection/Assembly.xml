@@ -836,7 +836,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the method that calls the <xref:System.Reflection.Assembly.GetCallingAssembly%2A> method is expanded inline by the just-in-time (JIT) compiler, or if its caller is expanded inline, the assembly that is returned by <xref:System.Reflection.Assembly.GetCallingAssembly%2A> may differ unexpectedly. For example, consider the following methods and assemblies:  
+ If the method that calls the <xref:System.Reflection.Assembly.GetCallingAssembly%2A> method is expanded inline by the just-in-time (JIT) compiler, or if its caller is expanded inline, the assembly that is returned by <xref:System.Reflection.Assembly.GetCallingAssembly%2A>may differ unexpectedly. For example, consider the following methods and assemblies:  
   
 -   Method `M1` in assembly `A1` calls <xref:System.Reflection.Assembly.GetCallingAssembly%2A>.  
   
@@ -2978,7 +2978,7 @@
   
  Reflecting on C++ executable files might throw a <xref:System.BadImageFormatException>. This is most likely caused by the C++ compiler stripping the relocation addresses or the `.reloc` section from your executable file. To preserve the `.reloc` address for your C++ executable file, specify `/fixed:no` when you are linking.  
   
- If you call the [\], Byte\<xref:System.Reflection.Assembly.Load%2A> method more than once on the same assembly but with a different evidence specified, the common language runtime does not throw a <xref:System.IO.FileLoadException> because the equality and integrity of the different evidence specifications cannot be determined. The evidence that first succeeds is the evidence that is used.  
+ If you call the [\], Byte\<xref:System.Reflection.Assembly.Load%2A>method more than once on the same assembly but with a different evidence specified, the common language runtime does not throw a <xref:System.IO.FileLoadException> because the equality and integrity of the different evidence specifications cannot be determined. The evidence that first succeeds is the evidence that is used.  
   
  Note that this method overload always creates a new <xref:System.Reflection.Assembly> object with its own mapping.  
   
@@ -4397,7 +4397,7 @@
 ## Remarks  
  Use this method to load a local assembly that the operating system has flagged as having been loaded from the Web (for example, a temporary file that was downloaded from the Internet or intranet). Before the [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], such assemblies were automatically loaded into a sandboxed application domain. Starting with the [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)], they are loaded with full trust.  
   
- As an alternative to using this method, you can apply the [\&lt;NetFx40_LegacySecurityPolicy\&gt; Element](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) in your application configuration file. This causes the common language runtime to revert to the security policy of the [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)].  
+ As an alternative to using this method, you can apply the [\<NetFx40_LegacySecurityPolicy> Element](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) in your application configuration file. This causes the common language runtime to revert to the security policy of the [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)].  
   
 > [!CAUTION]
 >  If you use either of these solutions, you must be certain that it is safe to load `assemblyFile` with full trust.  

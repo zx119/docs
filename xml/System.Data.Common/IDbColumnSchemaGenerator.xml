@@ -18,7 +18,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Generates a column schema.</summary>
+    <summary>To be added.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -41,8 +41,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Gets the column schema (<see cref="T:System.Data.Common.DbColumn" /> collection).</summary>
-        <returns>The column schema (<see cref="T:System.Data.Common.DbColumn" /> collection).</returns>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
