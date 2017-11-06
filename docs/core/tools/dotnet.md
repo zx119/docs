@@ -20,7 +20,7 @@ ms.technology: dotnet-cli
 
 # [.NET Core 2.x](#tab/netcore2x)
 ```
-dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbose] [--version]
+dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
 # [.NET Core 1.x](#tab/netcore1x)
 ```
@@ -42,7 +42,7 @@ The only time `dotnet` is used as a command on its own is to run [framework-depe
 
 `--additionaldeps <PATH>`
 
-Path to additonal *deps.json* file.
+Path to additional *deps.json* file.
 
 `--additionalprobingpath <PATH>`
 
@@ -68,7 +68,7 @@ Prints out detailed information about the CLI tooling and the environment, such 
 
  Rolls forward on no candidate shared framework.
 
-`-v|--verbose`
+`-v|--verbosity`
 
 Enables verbose output.
 
