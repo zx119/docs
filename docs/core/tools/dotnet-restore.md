@@ -1,11 +1,11 @@
 ---
 title: dotnet restore command
 description: Learn how to restore dependencies and project-specific tools with the dotnet restore command.
-ms.date: 05/29/2018
+ms.date: 02/14/2020
 ---
 # dotnet restore
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**This article applies to:** ✔️ .NET Core 2.x SDK and later versions
 
 ## Name
 
@@ -13,25 +13,12 @@ ms.date: 05/29/2018
 
 ## Synopsis
 
-<!-- markdownlint-disable MD025 -->
-
-# [.NET Core 2.x](#tab/netcore2x)
-
 ```dotnetcli
-dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-failed-sources] [--no-cache]
-    [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity] [--interactive]
+dotnet restore [<PROJECT>|<SOLUTION>] [--configfile] [--disable-parallel] [--force] [--force-evaluate] [--ignore-failed-sources]
+    [--interactive] [--lock-file-path] [--locked-mode] [--no-cache] [--no-dependencies] 
+    [--packages] [-r|--runtime] [-s|--source] [--use-lock-file] [-v|--verbosity]
 dotnet restore [-h|--help]
 ```
-
-# [.NET Core 1.x](#tab/netcore1x)
-
-```dotnetcli
-dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--ignore-failed-sources] [--no-cache]
-    [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
-dotnet restore [-h|--help]
-```
-
----
 
 ## Description
 
@@ -65,7 +52,7 @@ There are three specific settings that `dotnet restore` ignores:
 
 ## Implicit `dotnet restore`
 
-Starting with .NET Core 2.0, `dotnet restore` is run implicitly if necessary when you issue the following commands:
+Starting with .NET Core 2.0 SDK, `dotnet restore` is run implicitly if necessary when you issue the following commands:
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
@@ -81,124 +68,88 @@ Sometimes, it might be inconvenient to run `dotnet restore` implicitly. For exam
 
 ## Arguments
 
-`ROOT`
+`PROJECT | SOLUTION`
 
-Optional path to the project file to restore.
+Optional path to the project or solution file to restore.
 
 ## Options
 
-# [.NET Core 2.x](#tab/netcore2x)
+- **`--configfile <FILE>`**
 
-`--configfile <FILE>`
+  The NuGet configuration file (*nuget.config*) to use for the restore operation.
 
-The NuGet configuration file (*nuget.config*) to use for the restore operation.
+- **`--disable-parallel`**
 
-`--disable-parallel`
+  Disables restoring multiple projects in parallel.
 
-Disables restoring multiple projects in parallel.
+- **`--force`**
 
-`--force`
+  Forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is the same as deleting the *project.assets.json* file.
 
-Forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is the same as deleting the *project.assets.json* file.
+- **`-h|--help`**
 
-`-h|--help`
+  Prints out a short help for the command.
 
-Prints out a short help for the command.
+- **`--ignore-failed-sources`**
 
-`--ignore-failed-sources`
+  Only warn about failed sources if there are packages meeting the version requirement.
 
-Only warn about failed sources if there are packages meeting the version requirement.
+- **`--interactive`**
 
-`--no-cache`
+  Allows the command to stop and wait for user input or action (for example to complete authentication). Since .NET Core 2.1.401 SDK.
 
-Specifies to not cache packages and HTTP requests.
+- **`--no-cache`**
 
-`--no-dependencies`
+  Specifies to not cache packages and HTTP requests.
 
-When restoring a project with project-to-project (P2P) references, restores the root project and not the references.
+- **`--no-dependencies`**
 
-`--packages <PACKAGES_DIRECTORY>`
+  When restoring a project with project-to-project (P2P) references, restores the root project and not the references.
 
-Specifies the directory for restored packages.
+- **`--packages <PACKAGES_DIRECTORY>`**
 
-`-r|--runtime <RUNTIME_IDENTIFIER>`
+  Specifies the directory for restored packages.
 
-Specifies a runtime for the package restore. This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file. For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md). Provide multiple RIDs by specifying this option multiple times.
+- **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-`-s|--source <SOURCE>`
+  Specifies a runtime for the package restore. This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file. For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md). Provide multiple RIDs by specifying this option multiple times.
 
-Specifies a NuGet package source to use during the restore operation. This setting overrides all of the sources specified in the *nuget.config* files. Multiple sources can be provided by specifying this option multiple times.
+- **`-s|--source <SOURCE>`**
 
-`--verbosity <LEVEL>`
+  Specifies a NuGet package source to use during the restore operation. This setting overrides all of the sources specified in the *nuget.config* files. Multiple sources can be provided by specifying this option multiple times.
 
-Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. Default value is `minimal`.
+- **`--verbosity <LEVEL>`**
 
-`--interactive`
-
-Allows the command to stop and wait for user input or action (for example to complete authentication). Since .NET Core 2.1.400.
-
-# [.NET Core 1.x](#tab/netcore1x)
-
-`--configfile <FILE>`
-
-The NuGet configuration file (*nuget.config*) to use for the restore operation.
-
-`--disable-parallel`
-
-Disables restoring multiple projects in parallel.
-
-`-h|--help`
-
-Prints out a short help for the command.
-
-`--ignore-failed-sources`
-
-Only warn about failed sources if there are packages meeting the version requirement.
-
-`--no-cache`
-
-Specifies to not cache packages and HTTP requests.
-
-`--no-dependencies`
-
-When restoring a project with project-to-project (P2P) references, restores the root project and not the references.
-
-`--packages <PACKAGES_DIRECTORY>`
-
-Specifies the directory for restored packages.
-
-`-r|--runtime <RUNTIME_IDENTIFIER>`
-
-Specifies a runtime for the package restore. This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file. For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md). Provide multiple RIDs by specifying this option multiple times.
-
-`-s|--source <SOURCE>`
-
-Specifies a NuGet package source to use during the restore operation. This overrides all of the sources specified in the *nuget.config* files, effectively reading the *nuget.config* file as if the `<packageSource>` element was not there. Multiple sources can be provided by specifying this option multiple times.
-
-`--verbosity <LEVEL>`
-
-Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. The default is `minimal`.
-
----
+  Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. Default value is `minimal`.
 
 ## Examples
 
-Restore dependencies and tools for the project in the current directory:
+- Restore dependencies and tools for the project in the current directory:
 
-`dotnet restore`
+  ```dotnetcli
+  dotnet restore
+  ```
 
-Restore dependencies and tools for the `app1` project found in the given path:
+- Restore dependencies and tools for the `app1` project found in the given path:
 
-`dotnet restore ~/projects/app1/app1.csproj`
+  ```dotnetcli
+  dotnet restore ~/projects/app1/app1.csproj
+  ```
 
-Restore the dependencies and tools for the project in the current directory using the file path provided as the source:
+- Restore the dependencies and tools for the project in the current directory using the file path provided as the source:
 
-`dotnet restore -s c:\packages\mypackages`
+  ```dotnetcli
+  dotnet restore -s c:\packages\mypackages
+  ```
 
-Restore the dependencies and tools for the project in the current directory using the two file paths provided as sources:
+- Restore the dependencies and tools for the project in the current directory using the two file paths provided as sources:
 
-`dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages`
+  ```dotnetcli
+  dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages
+  ```
 
-Restore dependencies and tools for the project in the current directory showing detailed output:
+- Restore dependencies and tools for the project in the current directory showing detailed output:
 
-`dotnet restore --verbosity detailed`
+  ```dotnetcli
+  dotnet restore --verbosity detailed
+  ```
