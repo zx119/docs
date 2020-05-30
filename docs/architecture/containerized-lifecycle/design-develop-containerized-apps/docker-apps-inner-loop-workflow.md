@@ -125,9 +125,9 @@ In the DockerFile, you can also instruct Docker to listen to the TCP port that y
 You can specify additional configuration settings in the Dockerfile, depending on the language and framework you're using. For instance, the `ENTRYPOINT` line with `["dotnet", "MySingleContainerWebApp.dll"]` tells Docker to run a .NET Core application. If you're using the SDK and the .NET Core CLI (`dotnet CLI`) to build and run the .NET application, this setting would be different. The key point here is that the ENTRYPOINT line and other settings depend on the language and platform you choose for your application.
 
 > [!TIP]
-> For more information about building Docker images for .NET Core applications, go to <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
+> For more information about building Docker images for .NET Core applications, see [Docker images for ASP.NET Core](/aspnet/core/host-and-deploy/docker/building-net-docker-images).
 >
-> To learn more about building your own images, go to <https://docs.docker.com/engine/tutorials/dockerimages/>.
+> To learn more about building your own images, see <https://docs.docker.com/engine/tutorials/dockerimages/>.
 
 **Use multi-arch image repositories**
 
